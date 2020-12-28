@@ -11,3 +11,4 @@ build:
 	ar rcs packages/emojitk/libemojitk.a gtk.a
 
 	@rm gtk.a
+	@rm main.o
