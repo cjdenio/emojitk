@@ -1,20 +1,25 @@
 #include <gtkmm.h>
 #include <emojicode/s/String.h>
+#include <emojicode/runtime/Runtime.h>
+
 #include <iostream>
 
-// BEGIN TESTING STUFF
-class MyWindow : public Gtk::Window
+class Window : public runtime::Object<Window>
 {
 public:
-    MyWindow();
+    Gtk::Window window;
 };
 
-MyWindow::MyWindow()
+extern "C" Window *windowNew(s::String *title, runtime::Integer *xSize, runtime::Integer *ySize)
 {
-    set_title("Basic application");
-    set_default_size(200, 200);
+    auto window = Window::init();
+    window->window.set_title(title->stdString());
+    window->window.set_default_size(xSize, ySize);
+
+    return window;
 }
-// END TESTING STUFF
+
+SET_INFO_FOR(Window, emojitk, 1f5bc)
 
 class Application : public runtime::Object<Application>
 {
@@ -34,21 +39,9 @@ extern "C" Application *applicationNew(s::String *id)
 }
 
 extern "C" void
-applicationRun(Application *app)
+applicationRun(Application *app, Window *window)
 {
-    // MyWindow myWindow;
-    // app->app->run(myWindow);
+    app->app->run(window->window);
 }
 
 SET_INFO_FOR(Application, emojitk, 1f4f1)
-
-extern "C" void openWindow(runtime::ClassInfo *, s::String *title)
-{
-    auto app = Gtk::Application::create("org.gtkmm.examples.base");
-
-    MyWindow myWindow;
-
-    myWindow.set_title(title->stdString());
-
-    app->run(myWindow);
-}

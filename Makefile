@@ -6,7 +6,7 @@ build:
 	mv 🏛 packages/emojitk/
 	mv libemojitk.a packages/emojitk/
 
-	g++ -c main.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o gtk.a
+	g++ -c main.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o gtk.a -fpermissive
 
 	ar rcs packages/emojitk/libemojitk.a gtk.a
 
