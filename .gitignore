@@ -1,3 +1,4 @@
 packages/
 *.a
 *.o
+test

@@ -6,9 +6,11 @@ build:
 	@mv 🏛 packages/emojitk/
 	@mv libemojitk.a packages/emojitk/
 
-	g++ -c main.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o gtk.a -fpermissive
+	g++ -c src/Application.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o Application.o -fpermissive
+	g++ -c src/Button.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o Button.o -fpermissive
+	g++ -c src/Window.cpp `pkg-config gtkmm-3.0 --cflags --libs` -o Window.o -fpermissive
 
-	ar rcs packages/emojitk/libemojitk.a gtk.a
+	ar rcs packages/emojitk/libemojitk.a Application.o Button.o Window.o
 
-	@rm gtk.a
+	@rm Application.o Button.o Window.o
 	@rm main.o
