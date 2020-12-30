@@ -14,5 +14,5 @@ jobs:
           && cd Emojicode-1.0-beta.2-Linux-x86_64 && ./install.sh \
           && cd .. && rm -r Emojicode-1.0-beta.2-Linux-x86_64
         name: Install Emojicode compiler
-      - run: apt install libgtkmm-3.0-dev
+      - run: sudo apt-get install libgtkmm-3.0-dev
       - run: make build
