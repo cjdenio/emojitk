@@ -12,9 +12,9 @@ jobs:
           curl -o emojicode.tar.gz -L https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz \
           && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
           && cd Emojicode-1.0-beta.2-Linux-x86_64 \
-          && mkdir -p /usr/local/include/emojicode && mv include/* /usr/local/include/emojicode \
-          && mkdir -p /usr/local/EmojicodePackages && mv packages/* /usr/local/EmojicodePackages \
-          && mv emojicodec /usr/local/bin/emojicodec \
+          && sudo mkdir -p /usr/local/include/emojicode && sudo mv include/* /usr/local/include/emojicode \
+          && sudo mkdir -p /usr/local/EmojicodePackages && sudo mv packages/* /usr/local/EmojicodePackages \
+          && sudo mv emojicodec /usr/local/bin/emojicodec \
           && cd .. && rm -r Emojicode-1.0-beta.2-Linux-x86_64 \
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
