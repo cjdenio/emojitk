@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "Button.h"
+#include "Widget.h"
 
 #include <emojicode/runtime/Runtime.h>
 #include <emojicode/s/String.h>
@@ -13,10 +13,10 @@ extern "C" Window *windowNew(s::String *title, runtime::Integer *xSize, runtime:
     return window;
 }
 
-extern "C" void windowAdd(Window *window, Button *button)
+extern "C" void windowAdd(Window *window, Widget *widget)
 {
-    window->add(*button);
-    button->show();
+    window->add(*widget);
+    widget->show();
 }
 
 SET_INFO_FOR(Window, emojitk, 1f5bc)
