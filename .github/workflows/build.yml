@@ -1,0 +1,18 @@
+name: Build
+on:
+  - push
+  - pull_request
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+        curl -o emojicode.tar.gz -L https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz \
+        && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
+        && cd Emojicode-1.0-beta.2-Linux-x86_64 && ./install.sh \
+        && cd .. && rm -r Emojicode-1.0-beta.2-Linux-x86_64
+      - name: Install Emojicode compiler
+      - run: apt install libgtkmm-3.0-dev
+      - run: make build
