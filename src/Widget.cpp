@@ -1,5 +1,3 @@
-#define [[noreturn]] __atribute__((noreturn))
-
 #include <emojicode/runtime/Runtime.h>
 
 #include "Widget.h"
