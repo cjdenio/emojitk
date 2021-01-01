@@ -1,3 +1,5 @@
+#define [[noreturn]] __atribute__((noreturn))
+
 #include "Application.h"
 #include "Window.h"
 

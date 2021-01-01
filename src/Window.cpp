@@ -1,3 +1,5 @@
+#define [[noreturn]] __atribute__((noreturn))
+
 #include "Window.h"
 #include "Widget.h"
 

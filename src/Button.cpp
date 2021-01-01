@@ -1,3 +1,5 @@
+#define [[noreturn]] __atribute__((noreturn))
+
 #include "Button.h"
 
 #include <emojicode/runtime/Runtime.h>

@@ -1,3 +1,5 @@
+#define [[noreturn]] __atribute__((noreturn))
+
 #include "Label.h"
 #include <emojicode/s/String.h>
 #include <gtkmm.h>
