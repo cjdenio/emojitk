@@ -33,6 +33,5 @@ jobs:
           && sudo mv emojicodec /usr/local/bin/emojicodec \
           && cd .. && rm -r Emojicode-1.0-beta.2-Darwin-x86_64
         name: Install Emojicode compiler
-      - run: g++ --version
       - run: brew install gtkmm3
       - run: make build
