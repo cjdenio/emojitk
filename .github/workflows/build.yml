@@ -18,7 +18,9 @@ jobs:
           && cd .. && rm -r Emojicode-1.0-beta.2-Linux-x86_64 \
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
-      - run: make build
+        name: Install gtkmm
+      - run: ./build.sh
+        name: Build
   build-macos:
     name: MacOS Build
     runs-on: macos-latest
@@ -34,4 +36,6 @@ jobs:
           && cd .. && rm -r Emojicode-1.0-beta.2-Darwin-x86_64
         name: Install Emojicode compiler
       - run: brew install gtkmm3
-      - run: make build
+        name: Install gtkmm
+      - run: ./build.sh
+        name: Build
