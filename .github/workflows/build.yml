@@ -18,10 +18,10 @@ jobs:
       - uses: cjdenio/setup-emojicode@master
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
-        name: Install gtkmm
+        name: Install gtkmm (linux)
         if: ${{ matrix.os == 'ubuntu-latest' }}
       - run: brew install gtkmm3
-        name: Install gtkmm
+        name: Install gtkmm (macos)
         if: ${{ matrix.os == 'macos-latest' }}
       - run: ./build.sh
         name: Build
