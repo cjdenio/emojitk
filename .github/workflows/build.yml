@@ -3,39 +3,25 @@ on:
   - push
   - pull_request
 jobs:
-  build-linux:
-    name: Linux Build
-    runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          curl -o emojicode.tar.gz -L https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz \
-          && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
-          && cd Emojicode-1.0-beta.2-Linux-x86_64 \
-          && sudo mkdir -p /usr/local/include/emojicode && sudo mv include/* /usr/local/include/emojicode \
-          && sudo mkdir -p /usr/local/EmojicodePackages && sudo mv packages/* /usr/local/EmojicodePackages \
-          && sudo mv emojicodec /usr/local/bin/emojicodec \
-          && cd .. && rm -r Emojicode-1.0-beta.2-Linux-x86_64 \
+        with:
+          version: 1.0-beta.2
+      - uses: cjdenio/setup-emojicode@master
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
-        name: Install gtkmm
-      - run: ./build.sh
-        name: Build
-  build-macos:
-    name: MacOS Build
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: |
-          curl -o emojicode.tar.gz -L https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Darwin-x86_64.tar.gz \
-          && tar -xzf emojicode.tar.gz && rm emojicode.tar.gz \
-          && cd Emojicode-1.0-beta.2-Darwin-x86_64 \
-          && sudo mkdir -p /usr/local/include/emojicode && sudo mv include/* /usr/local/include/emojicode \
-          && sudo mkdir -p /usr/local/EmojicodePackages && sudo mv packages/* /usr/local/EmojicodePackages \
-          && sudo mv emojicodec /usr/local/bin/emojicodec \
-          && cd .. && rm -r Emojicode-1.0-beta.2-Darwin-x86_64
-        name: Install Emojicode compiler
+        name: Install gtkmm (linux)
+        if: ${{ matrix.os == 'ubuntu-latest' }}
       - run: brew install gtkmm3
-        name: Install gtkmm
+        name: Install gtkmm (macos)
+        if: ${{ matrix.os == 'macos-latest' }}
       - run: ./build.sh
         name: Build
