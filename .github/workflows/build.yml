@@ -3,9 +3,14 @@ on:
   - push
   - pull_request
 jobs:
-  build-linux:
-    name: Linux Build
-    runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -14,18 +19,9 @@ jobs:
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
         name: Install gtkmm
-      - run: ./build.sh
-        name: Build
-  build-macos:
-    name: MacOS Build
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          version: 1.0-beta.2
-      - uses: cjdenio/setup-emojicode@master
-        name: Install Emojicode compiler
+        if: ${{ matrix.os == 'ubuntu-latest' }}
       - run: brew install gtkmm3
         name: Install gtkmm
+        if: ${{ matrix.os == 'macos-latest' }}
       - run: ./build.sh
         name: Build
