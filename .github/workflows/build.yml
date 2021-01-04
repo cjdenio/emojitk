@@ -13,9 +13,9 @@ jobs:
           - macos-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: cjdenio/setup-emojicode@master
         with:
           version: 1.0-beta.2
-      - uses: cjdenio/setup-emojicode@master
         name: Install Emojicode compiler
       - run: sudo apt-get install libgtkmm-3.0-dev
         name: Install gtkmm (linux)
