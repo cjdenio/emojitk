@@ -7,4 +7,4 @@ extern "C" Widget *widgetNew()
     return Widget::init();
 }
 
-SET_INFO_FOR(Widget, emojitk, 1f4ec)
+SET_INFO_FOR(Widget, emojitk, 1f4ea)

@@ -10,4 +10,4 @@ extern "C" Label *labelNew(s::String *text)
     return label;
 }
 
-SET_INFO_FOR(Label, emojitk, 1f9ea)
+SET_INFO_FOR(Label, emojitk, 1f4dd)
