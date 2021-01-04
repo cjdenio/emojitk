@@ -1,24 +1,49 @@
+📘
+  GTK bindings for Emojicode!
+📘
+
+📗
+  A GTK app - wraps the `Application` class
+📗
 🌍📻🐇📱🍇
     🆕 application_id 🔡 📻 🔤applicationNew🔤
 
+    📗
+      Starts the app with the specified window
+    📗
     ❗🏁window 🖼️📻🔤applicationRun🔤
 🍉
 
+📗
+  A superclass for GTK widgets - wraps the `Widget` class
+📗
 🌍📻🐇📪🍇
     🆕📻🔤widgetNew🔤
 🍉
 
+📗
+  A GTK button - wraps the `Button` class
+📗
 🌍📻🐇⏺️📪🍇
     🆕 text 🔡📻🔤buttonNew🔤
 🍉
 
+📗
+  A label for displaying short text - wraps the `Label` class
+📗
 🌍📻🐇📝📪🍇
     🆕 text 🔡📻🔤labelNew🔤
 🍉
 
+📗
+  A GTK window - wraps the `Window` class
+📗
 🌍📻🐇🖼️🍇
     🆕title 🔡 xSize 🔢 ySize 🔢📻🔤windowNew🔤
 
+    📗
+      Adds the specified widget to the window
+    📗
     ❗📬 widget 📪📻🔤windowAdd🔤
 🍉
 
