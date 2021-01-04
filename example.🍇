@@ -1,10 +1,13 @@
 📦 emojitk 🏠
 
 🏁🍇
+    💭 create the app
     🆕📱🔤me.calebdenio.gtk.test🔤❗ ➡️ app
+
+    💭 create a window with the given title and dimensions
     🆕🖼️🔤😜 emojitk test app🔤 500 500❗ ➡️ window
 
-    💭create a label
+    💭 create a label
     🆕📝 🔤📝 This is quite an interesting label...🔤❗ ➡️ label
 
     💭 add the label to the window
