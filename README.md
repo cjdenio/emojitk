@@ -8,7 +8,10 @@ hey look a clever name (emoji + gtk, get it?)
 
 idk `./build.sh` might work 🤷
 
-make sure you install `libgtkmm-3.0` via your system's package manager! try `sudo apt install libgtkmm-3.0-dev` on debian-based systems ✨
+make sure you install `libgtkmm-3.0` via your system's package manager:
+
+- try `sudo apt install libgtkmm-3.0-dev` on debian-based systems 🐧
+- try `brew install gtkmm3` on macos (requires [homebrew](https://brew.sh)) 🍎
 
 the built library will be available in `packages/emojitk/`
 
