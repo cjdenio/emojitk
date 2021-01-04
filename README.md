@@ -1,6 +1,8 @@
 <!-- DO NOT REMOVE - contributor_list:data:start:["cjdenio"]:end -->
 
-# emojitk
+# 🖥️ emojitk
+
+![CI status](https://github.com/cjdenio/emojitk/workflows/Build/badge.svg)
 
 hey look a clever name (emoji + gtk, get it?)
 
