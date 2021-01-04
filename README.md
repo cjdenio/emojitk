@@ -4,7 +4,7 @@
 
 hey look a clever name (emoji + gtk, get it?)
 
-## building
+## 🏗️ building
 
 idk `./build.sh` might work 🤷
 
@@ -12,7 +12,7 @@ make sure you install `libgtkmm-3.0` via your system's package manager! try `sud
 
 the built library will be available in `packages/emojitk/`
 
-## example
+## 🚸 example
 
 ```
 📦 emojitk 🏠
@@ -35,7 +35,7 @@ the built library will be available in `packages/emojitk/`
 🍉
 ```
 
-## screenshot
+## 🖼️ screenshot
 
 > Taken on [Pop!\_OS 20.10](https://pop.system76.com) with the [Dracula](https://draculatheme.com/gtk) GTK theme
 
