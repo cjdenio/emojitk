@@ -4,7 +4,9 @@ rm -rf packages/
 mkdir -p packages/emojitk/
 mkdir -p bin/src/
 
-emojicodec -p emojitk main.🍇
+emojicodec -r -p emojitk main.🍇
+
+mv documentation.json packages/emojitk/
 
 mv 🏛 packages/emojitk/
 mv libemojitk.a packages/emojitk/
